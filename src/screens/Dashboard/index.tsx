@@ -1,10 +1,12 @@
 import React from 'react';
 import { Container, Title } from './styles';
 
-export const Dashboard: React.FC = () => {
+
+export const Dashboard = () => {
   return (
     <Container>
-      <Title>Ola mundo cu</Title>
+      <Title>Ola mundo</Title>
     </Container>  
   );
 }
+
