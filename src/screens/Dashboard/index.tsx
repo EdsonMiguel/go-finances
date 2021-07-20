@@ -11,6 +11,8 @@ import {
   Icon
 } from './styles';
 
+import {HighLightCard} from '../../components/HighLightCard'
+
 
 
 export const Dashboard = () => {
@@ -30,6 +32,7 @@ export const Dashboard = () => {
           <Icon name="power"/>
         </UserWrapper>
       </Header>
+      <HighLightCard/>
     </Container>  
   );
 }
