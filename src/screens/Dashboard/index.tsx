@@ -7,7 +7,8 @@ import {
   Photo,
   User,
   UserGreeting,
-  UserName
+  UserName,
+  Icon
 } from './styles';
 
 
@@ -26,6 +27,7 @@ export const Dashboard = () => {
               <UserName>Miguel</UserName>
             </User>
           </UserInfo>
+          <Icon name="power"/>
         </UserWrapper>
       </Header>
     </Container>  
