@@ -1,11 +1,33 @@
 import React from 'react';
-import { Container, Title } from './styles';
+import { 
+  Container, 
+  Header,
+  UserWrapper,
+  UserInfo,
+  Photo,
+  User,
+  UserGreeting,
+  UserName
+} from './styles';
+
 
 
 export const Dashboard = () => {
   return (
     <Container>
-      <Title>Ola mundo</Title>
+      <Header>
+        <UserWrapper>
+          <UserInfo>
+            <Photo
+              source={{uri: 'https://github.com/edsonMiguel.png'}}
+            />
+            <User>
+              <UserGreeting>Olá, </UserGreeting>
+              <UserName>Miguel</UserName>
+            </User>
+          </UserInfo>
+        </UserWrapper>
+      </Header>
     </Container>  
   );
 }
