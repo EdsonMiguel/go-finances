@@ -8,7 +8,8 @@ import {
   User,
   UserGreeting,
   UserName,
-  Icon
+  Icon,
+  HighLightCards
 } from './styles';
 
 import {HighLightCard} from '../../components/HighLightCard'
@@ -32,7 +33,12 @@ export const Dashboard = () => {
           <Icon name="power"/>
         </UserWrapper>
       </Header>
-      <HighLightCard/>
+      <HighLightCards>
+        <HighLightCard/>
+        <HighLightCard/>
+        <HighLightCard/>
+      </HighLightCards>
+
     </Container>  
   );
 }
