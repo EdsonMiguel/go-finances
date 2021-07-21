@@ -9,10 +9,14 @@ import {
   UserGreeting,
   UserName,
   Icon,
-  HighLightCards
+  HighLightCards,
+  Transactions,
+  Title
 } from './styles';
 
-import {HighLightCard} from '../../components/HighLightCard'
+import {HighLightCard} from '../../components/HighLightCard';
+import { TransactionCard } from '../../components/TransactionCard';
+
 
 
 
@@ -54,7 +58,10 @@ export const Dashboard = () => {
         />
   
       </HighLightCards>
-
+      <Transactions>
+        <Title>Listagem</Title>
+        <TransactionCard/>
+      </Transactions> 
     </Container>  
   );
 }
