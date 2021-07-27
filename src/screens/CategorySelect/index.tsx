@@ -18,20 +18,24 @@ import { categories } from '../../utils/category';
 interface Category{
   key: string;
   name: string;
-
 }
 
 interface Props {
-  category: string;
+  category: Category;
   setCagtegory: (category: Category) => void;
   closeSelectCategory: () => void;
-
 }
 
 
 export function CategorySelect({
-  category
+  category, 
+  setCagtegory,
+  closeSelectCategory
 }:Props){
+
+  function handleCategorySelect(category: Category){
+    setCagtegory(category)
+  }
   return(
     <Container>
       <Header>
@@ -42,7 +46,10 @@ export function CategorySelect({
         keyExtractor={item => item.key}
         style={{flex: 1, width: '100%'}}
         renderItem={({ item }) => (
-          <Category>
+          <Category
+            onPress={ () => handleCategorySelect(item)}
+            isActive={category.key === item.key}
+          >
               <Icon name={item.icon}/>
               <Name>{item.name}</Name>
           </Category>
@@ -50,7 +57,7 @@ export function CategorySelect({
         ItemSeparatorComponent={() => <Separetor/>}
       />
       <Footer>
-          <Button title="Selecionar"/>
+          <Button title="Selecionar" onPress={closeSelectCategory}/>
       </Footer>
     </Container>
   )

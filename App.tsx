@@ -16,9 +16,6 @@ import {
 
 import {useFonts} from 'expo-font';
 
-
-
-
 export default function App() {
 
   const [fontsLoaded] = useFonts({
@@ -33,7 +30,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme} >
-      <CategorySelect/>
+      <Register/>
     </ThemeProvider>
   );
 }

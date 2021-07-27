@@ -8,6 +8,7 @@ import {
 
 interface Props extends TouchableOpacityProps{
   title: string;
+  onPress: () => void;
 }
 
 export function CategorySelectButton({title, ...rest}: Props){
