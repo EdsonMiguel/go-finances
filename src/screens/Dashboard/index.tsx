@@ -42,7 +42,17 @@ export const Dashboard = () => {
 
   const [transactions, setTransactions] = useState<DataListProps[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [highlightData, setHighlightData] = useState<HighlightData>({} as HighlightData);
+  const [highlightData, setHighlightData] = useState<HighlightData>({
+    entries:{
+      amount: ""
+    },
+    expensives:{
+      amount: ""
+    },
+    total:{
+      amount: ""
+    },
+  });
 
   async function fetchTransactions(){
     const dataKey = "@gofinances:tramsactions";
@@ -108,7 +118,6 @@ export const Dashboard = () => {
         })
       }
     });
-    console.log(highlightData)
   }
 
   useEffect(() => { fetchTransactions() }, [])
