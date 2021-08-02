@@ -93,7 +93,6 @@ export function Register(){
         newTransaction
       ]
       await AsyncStorage.setItem(dataKey, JSON.stringify(transactions));
-      console.log(transactions);
       
       reset();
       setCategory({
@@ -104,7 +103,6 @@ export function Register(){
       navigation.navigate('Listagem')
 
     } catch (error) {
-      console.log(error);
       Alert.alert("Não foi possivél salvar")
     }
   }
@@ -112,7 +110,6 @@ export function Register(){
   useEffect(() =>{
     async function loadData() {
       const data = await AsyncStorage.getItem(dataKey);
-      console.log(JSON.parse(data!));
     }
     loadData();
 
