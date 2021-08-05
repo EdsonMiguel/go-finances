@@ -4,20 +4,16 @@ import 'intl/locale-data/jsonp/pt-BR';
 import { StatusBar } from 'react-native';
 import {ThemeProvider} from 'styled-components';
 import theme from './src/global/styles/theme';
-import { NavigationContainer } from '@react-navigation/native';
-import {AppRoutes} from './src/routes/app.routes';
 import AppLoading  from 'expo-app-loading';
 import {AuthProvider} from './src/hooks/auth'
-
 import {
   Poppins_400Regular,
   Poppins_500Medium,
   Poppins_700Bold
 } from '@expo-google-fonts/poppins'
-
-import { SingIn } from './src/screens/SignIn'
-
 import {useFonts} from 'expo-font';
+import { Routes } from './src/routes'
+
 
 export default function App() {
 
@@ -33,16 +29,14 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme} >
-        <NavigationContainer>
-          <StatusBar 
-            barStyle="light-content"
-            backgroundColor="transparent"
-            translucent/>
+      <StatusBar 
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
       <AuthProvider>
-          <SingIn/>
+        <Routes/>
       </AuthProvider>
-
-        </NavigationContainer>
     </ThemeProvider>
   );
 }

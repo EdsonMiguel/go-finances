@@ -3,8 +3,8 @@
   "displayName": "go-finances",
   "expo": {
     "name": "go-finances",
+    "scheme": "go-finances",
     "slug": "go-finances",
-    "schema": "go-finances",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"

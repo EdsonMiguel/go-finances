@@ -6,6 +6,7 @@ import GoogleSvg from '../../assets/google.svg';
 import LogoSvg from '../../assets/logo.svg';
 
 import { SignInSocialButton } from '../../components/SocialSignInButton';
+import {Alert} from 'react-native'
 
 import {useAuth} from '../../hooks/auth';
 
@@ -20,10 +21,17 @@ import {
 } from './styles'
 
 export function SingIn(){
-  const data = useAuth();
+  const { signInWithGoogle } = useAuth();
 
-  console.log(data);
+  async function handleSignInWithGoogle() {
+    try {
+      await signInWithGoogle();
 
+    } catch (error) {
+      console.log(error)
+      Alert.alert('Houve um problema')
+    }
+  }
   return(
     <Container>
       <Header>
@@ -48,6 +56,7 @@ export function SingIn(){
           <SignInSocialButton 
             title="Entrar com o Google"
             svg={GoogleSvg}
+            onPress={handleSignInWithGoogle}
           />
           <SignInSocialButton 
             title="Entrar com o Apple"
